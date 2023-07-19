@@ -4,10 +4,13 @@
 
 const AppReducer = (state, action) => {
   switch (action.type) {
-    /* case value:
-      
-      break;
-   */
+    case "ADD_TRANSACTION":
+      //updateObj_with_spread
+        return {
+          ...state,
+          transactions: [action.payload, ...state.transactions]
+        }
+  
     default:
       return state
   }

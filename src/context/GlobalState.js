@@ -30,9 +30,20 @@ export const GlobalProvider = ({children}) => {
      during the initial render. If provided, the initializer 
      function should return the initial state value.
   */
+
+  // dispatch methods
+  function addTransaction(newTransaction) {
+    dispatch({
+      type: "ADD_TRANSACTION",
+      payload: newTransaction
+    })
+  }
+
+
   return(
     <GlobalContext.Provider value={{
-      transactions: state.transactions
+      transactions: state.transactions,
+      addTransaction
     }}>
       {children}
     </GlobalContext.Provider>

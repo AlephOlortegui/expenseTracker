@@ -1,7 +1,10 @@
 import {nanoid} from 'nanoid'
-import { useState } from 'react'
+import { useContext, useState } from 'react'
+import { GlobalContext } from '../context/GlobalState'
 
 const AddTransaction = () => {
+
+  const {addTransaction} = useContext(GlobalContext)
 
   const [text, setText] = useState('')
   const [amount, setAmount] = useState('')
@@ -15,6 +18,7 @@ const AddTransaction = () => {
       amount: +amount //using "+" is the same as parseInt
     }
     console.log(newTransaction)
+    addTransaction(newTransaction)
     //Clean Up
     setText('')
     setAmount('')
