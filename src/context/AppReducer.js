@@ -10,7 +10,13 @@ const AppReducer = (state, action) => {
           ...state,
           transactions: [action.payload, ...state.transactions]
         }
-  
+    case 'DELETE_TRANSACTION':
+      return{
+          //updateObj_with_spread
+          ...state,
+          //then we change our transactions values
+          transactions: state.transactions.filter(transaction => transaction.id !== action.payload)
+      }
     default:
       return state
   }
