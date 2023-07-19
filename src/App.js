@@ -18,6 +18,7 @@ function App() {
         <Balance />
         <IncomeExpenses />
         <TransactionList />
+        <AddTransaction />
       </div>
     </GlobalProvider>
   );
