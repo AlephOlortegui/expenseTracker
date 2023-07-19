@@ -5,3 +5,15 @@
 ## Steps
 
 - Initial View without Add Transaction
+- Context AppReducer and GlobalState just show the state
+  
+### terms
+
+  ```bash
+    import { createContext, useReducer, useContext } from 'react';
+
+    dispatch from useReducer(AppReducer, initialState)
+
+    where dispatch({type: "", payload: ""})
+  ```
+- IncomeExpenses, Balance, TransactionList -- Amount calculations.
